@@ -1,0 +1,47 @@
+$hoverColor: #525362;
+$selectColor: #da5859;
+$textColor: #fff;
+$footerHeight: 60px;
+$padding: 50px;
+
+.footer {
+    font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,san-serif;
+    background-color: #343547;
+
+    .content {
+        min-width: 900px - 2*$padding;
+        max-width: 1200px;
+        padding: 20px $padding 0;
+        margin: 0 auto;
+        height: $footerHeight;
+        color: $textColor;
+
+        .text {
+            display: inline-block;
+
+            h2 {
+                color: $selectColor;
+                font-weight: 400;
+                margin: 0;
+                font-size: 18px;
+            }
+
+            p {
+                margin: 0 0 0 2px;
+                font-size: 12px;
+                a {
+                    color: white;
+                }
+            }
+        }
+
+        .dx-logo {
+            float: right;
+            background: url("/assets/images/dx-logo.png") no-repeat;
+            margin-top: 6px;
+            width: 160px;
+            height: 30px;
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,114 @@
+$hoverColor: #525362;
+$selectColor: #da5859;
+$textColor: #fff;
+$menuHeight: 60px;
+$padding: 50px;
+
+.dx-menu-item-content {
+    padding: 0;
+}
+
+::ng-deep {
+    .dx-context-menu-container-border {
+        border: none;
+    }
+    .dx-context-menu-content-delimiter {
+        background-color: transparent;
+    }
+}
+
+.menu-item {
+    height: $menuHeight;
+    line-height: $menuHeight;
+    font-size: 16px;
+    padding: 0 20px;
+    display: block;
+    text-decoration: none;
+    &.selected {
+        background-color: #fef4e7;
+    }
+}
+
+.header-container {
+    background-color: #343547;
+    .content {
+        min-width: 900px - 2*$padding;
+        max-width: 1200px;
+        padding: 0 $padding;
+        margin: 0 auto;
+        height: $menuHeight;
+        color: $textColor;
+    
+        .logo {
+            width: 200px;
+            height: 14px;
+            margin-top: 24px;
+            display: block;
+            float: left;
+            background: url("/assets/images/logo.png") no-repeat;
+        }
+
+        nav {
+            float: right;
+            height: 100%;
+
+            .help {
+                float: left;
+                padding: 14px;
+                cursor: pointer;
+
+                .info-link {
+                    border: 1px solid $textColor;
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    text-align: center;
+                    border-radius: 15px;
+                    line-height: 30px;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    &::selection {
+                        background-color: transparent;
+                        color: #fff;
+                    }
+                }
+
+                &:hover {
+                    background-color: $hoverColor;
+                }
+            }
+
+            .top-menu {
+                
+                float: left;
+
+                .menu-item {
+                    color: $textColor;
+
+                    &.selected {
+                        background-color: $selectColor;
+                    }
+                }
+
+                .dx-menu-horizontal {
+                    height: 100%;
+                }
+
+                ::ng-deep .dx-menu-item {
+                    &.dx-state-hover {
+                        background-color: $hoverColor;
+                    }
+                    &.dx-menu-item-expanded {
+                        background-color: $selectColor;
+                    }
+                }
+
+                // TODO - Dashboard menu item has no \/ and no text for selected view
+            }
+        }
+    }
+}
