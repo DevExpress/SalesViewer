@@ -1,0 +1,30 @@
+.container {
+    position: relative;
+    height: 90px;
+    overflow: hidden;
+
+    .left-arrow, .right-arrow {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 35px;
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        &.disabled {
+            cursor: default;
+            opacity: 0.25;
+        }
+    }
+
+    .left-arrow {
+        background-image: url(/assets/images/prev.png);
+        left: -5px;
+    }
+
+    .right-arrow {
+        right: -7px;
+        background-image: url(/assets/images/next.png);
+    }
+}

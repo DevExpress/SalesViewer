@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
-import { DxMenuModule } from 'devextreme-angular';
+import { DxMenuModule, DxRangeSelectorModule } from 'devextreme-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { DashboardChannelsComponent } from './views/dashboard/channels/channels.
 import { ProductsComponent } from './views/products/products.component';
 import { SalesComponent } from './views/sales/sales.component';
 import { CustomersComponent } from './views/customers/customers.component';
+import { RangeSelectorComponent } from './components/rangeselector/rangeselector.component';
 
 @NgModule({
     declarations: [
@@ -24,13 +26,16 @@ import { CustomersComponent } from './views/customers/customers.component';
         DashboardChannelsComponent,
         ProductsComponent,
         SalesComponent,
-        CustomersComponent
+        CustomersComponent,
+        RangeSelectorComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
+        HttpClientModule,
 
-        DxMenuModule
+        DxMenuModule,
+        DxRangeSelectorModule
     ],
     providers: [],
     bootstrap: [AppComponent]
