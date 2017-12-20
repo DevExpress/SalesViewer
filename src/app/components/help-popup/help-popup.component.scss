@@ -1,0 +1,54 @@
+$selectColor: #f05b41;
+$headerTextColor: #fff;
+$popupTextColor: #484747;
+
+a {
+    text-decoration: none;
+}
+
+
+.popupButtons {
+    cursor: pointer;
+    background-color: $selectColor;
+    color: $headerTextColor;
+    padding: 10px 40px;
+    float: right;
+    margin-left: 10px;
+}
+
+.button {
+    cursor: pointer;
+    background-color: $selectColor;
+    color: $headerTextColor;
+    padding: 10px 40px;
+    float: right;
+    margin-left: 10px;
+    user-select: none;
+}
+
+.select-text {
+    color: $selectColor;
+}
+
+.popup-content {
+    padding: 20px;
+
+
+    .popup-title {
+        margin: 0 0 30px 0;
+        width: 191px;
+        height: 15px;
+        background: url(/assets/images/popup-title.png);
+    }
+
+    .popup-text {
+        p {
+            margin: 10px 0;
+            color: $popupTextColor;
+
+            a {
+                color: $popupTextColor;
+            }
+        }
+    }
+}

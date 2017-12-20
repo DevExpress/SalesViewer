@@ -16,7 +16,8 @@
                 </div>
             </dx-menu>
             <div class="help">
-                <span class="info-link">?</span>
+                <span class="info-link" (click)="popup.show()">?</span>
+                <app-help-popup #popup></app-help-popup>
             </div>
         </nav>
     </div>

@@ -1,4 +1,31 @@
 body, html {
     margin: 0;
-    min-width: 900px;
+    min-width: 1000px;
+    font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,san-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 80px;
+    box-sizing: border-box;
+}
+
+.dx-overlay-wrapper {
+    &.dx-overlay-shader {
+        background-color: rgba(254,254,254,.75);
+    }
+}
+
+
+.dx-popup-wrapper {
+    .dx-overlay-content {
+        border-radius: 0;
+        box-shadow: 0 32px 64px rgba(0,0,0,.5);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
 }

@@ -2,7 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { DxMenuModule, DxRangeSelectorModule } from 'devextreme-angular';
+import {
+    DxMenuModule,
+    DxRangeSelectorModule,
+    DxPopupModule
+} from 'devextreme-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +19,7 @@ import { ProductsComponent } from './views/products/products.component';
 import { SalesComponent } from './views/sales/sales.component';
 import { CustomersComponent } from './views/customers/customers.component';
 import { RangeSelectorComponent } from './components/rangeselector/rangeselector.component';
+import { HelpPopupComponent } from './components/help-popup/help-popup.component';
 
 @NgModule({
     declarations: [
@@ -27,7 +32,8 @@ import { RangeSelectorComponent } from './components/rangeselector/rangeselector
         ProductsComponent,
         SalesComponent,
         CustomersComponent,
-        RangeSelectorComponent
+        RangeSelectorComponent,
+        HelpPopupComponent
     ],
     imports: [
         BrowserModule,
@@ -35,7 +41,8 @@ import { RangeSelectorComponent } from './components/rangeselector/rangeselector
         HttpClientModule,
 
         DxMenuModule,
-        DxRangeSelectorModule
+        DxRangeSelectorModule,
+        DxPopupModule
     ],
     providers: [],
     bootstrap: [AppComponent]
