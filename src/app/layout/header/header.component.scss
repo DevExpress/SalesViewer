@@ -1,5 +1,5 @@
 $hoverColor: #525362;
-$selectColor: #da5859;
+$selectColor: #f05b41;
 $textColor: #fff;
 $menuHeight: 60px;
 $padding: 50px;
@@ -15,6 +15,17 @@ $padding: 50px;
     .dx-context-menu-content-delimiter {
         background-color: transparent;
     }
+    .dx-submenu {
+        .menu-item {
+            width: 286px;
+        }
+        .dx-menu-item-wrapper {
+            border-bottom: 1px solid rgba(0,0,0,.18);
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
 }
 
 .menu-item {
@@ -29,6 +40,10 @@ $padding: 50px;
     }
 }
 
+a.menu-item, a:active.menu-item, a:visited.menu-item {
+    color: #333;
+}
+
 .header-container {
     background-color: #343547;
     .content {
@@ -38,7 +53,7 @@ $padding: 50px;
         margin: 0 auto;
         height: $menuHeight;
         color: $textColor;
-    
+
         .logo {
             width: 200px;
             height: 14px;
@@ -46,6 +61,7 @@ $padding: 50px;
             display: block;
             float: left;
             background: url(/assets/images/logo.png) no-repeat;
+            background-position-x: 1px;
         }
 
         nav {
@@ -102,12 +118,31 @@ $padding: 50px;
                     &.dx-state-hover {
                         background-color: $hoverColor;
                     }
+
                     &.dx-menu-item-expanded {
-                        background-color: $selectColor;
+                        background-color: $hoverColor;
+                    }
+
+                    &.dx-menu-item-has-submenu {
+                        width: 290px;
+                        text-align: right;
+
+                        &:after {
+                            content: ' ';
+                            display: block;
+                            width: 10px;
+                            height: 10px;
+                            background-image: url(/assets/images/down.png);
+                            position: absolute;
+                            top: 26px;
+                            right: 20px;
+                        }
+
+                        .menu-item {
+                            padding-right: 46px;
+                        }
                     }
                 }
-
-                // TODO - Dashboard menu item has no \/ and no text for selected view
             }
         }
     }

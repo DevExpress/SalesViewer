@@ -12,7 +12,7 @@
                 selectionMode="none"
             >
                 <div *dxTemplate="let i of 'item'">
-                    <a *ngIf="i.data" routerLink={{i.data.link}} routerLinkActive="selected" class="menu-item">{{i.data.title}}</a>
+                    <a *ngIf="i.data" routerLink={{i.data.link}} routerLinkActive="selected" class="menu-item">{{i.data.title}}{{ selectedChild(i) }}</a>
                 </div>
             </dx-menu>
             <div class="help">

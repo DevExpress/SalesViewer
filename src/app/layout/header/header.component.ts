@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Routes } from '@angular/router';
+import { Routes, Router } from '@angular/router';
 import { RoutesService } from '../../services/routes.service';
 
 @Component({
@@ -11,7 +11,18 @@ import { RoutesService } from '../../services/routes.service';
 export class HeaderComponent implements OnInit {
     menuRoutes: Routes;
 
-    constructor(private routesService: RoutesService) {
+    selectedChild(routeItem: any): string {
+        if(!routeItem.children) {
+            return;
+        }
+        for(let routeChildren of routeItem.children) {
+            if(routeChildren.data.link === this.router.url) {
+                return ': ' + routeChildren.data.title;
+            }
+        }
+    }
+
+    constructor(private routesService: RoutesService, private router: Router) {
         this.menuRoutes = routesService.getRoutes();
     }
 
