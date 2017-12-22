@@ -7,12 +7,12 @@
     >
         <dxo-behavior [animationEnabled]="false"></dxo-behavior>
         <dxo-loading-indicator backgroundColor="rgba(0,0,0,0)"></dxo-loading-indicator>
-        <dxo-indent [right]="32" [left]="32"></dxo-indent>
+        <dxo-indent [right]="34" [left]="34"></dxo-indent>
         <dxo-size [height]="90"></dxo-size>
-        <dxo-slider-marker color="#DA5859" format="monthAndDay"></dxo-slider-marker>
+        <dxo-slider-marker format="monthAndDay"></dxo-slider-marker>
         <dxo-slider-handle color="black" [opacity]="0.1"></dxo-slider-handle>
         <dxo-chart>
-            <dxi-series type="line" color="#DA5859" [opacity]="0.8" argumentField="SaleDate" valueField="Sales">
+            <dxi-series type="line" [opacity]="0.8" argumentField="SaleDate" valueField="Sales">
                 <dxo-point [visible]="false"></dxo-point>
             </dxi-series>
         </dxo-chart>
@@ -24,6 +24,7 @@
                 <dxo-font color="#808080"></dxo-font>
             </dxo-label>
         </dxo-scale>
+        <dxo-shutter [color]="shutterColor" [opacity]="0.75"></dxo-shutter>
     </dx-range-selector>
     <div class="right-arrow" [ngClass]="{ disabled: currentYear >= thisYear }" (click)="changeYear(1)"></div>
 </div>

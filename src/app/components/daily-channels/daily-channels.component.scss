@@ -1,0 +1,63 @@
+.bars {
+    height: 275px;
+    padding: 0 30px 50px 30px;
+    margin: 0 auto;
+    min-width: 840px;
+    max-width: 1240px;
+
+    .caption {
+        font-weight: 400;
+        font-size: 14px;
+        color: #808080;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+
+    .left-bar {
+        float: left;
+        width: 29%;
+        max-width: 310px;
+        padding-left: 20px;
+        box-sizing: border-box;
+
+        .vars {
+            padding-top: 40px;
+            width: 215px;
+            font-size: 14px;
+    
+            .row {
+                height: 32px;
+
+                &.total {
+                    padding-top: 13px;
+                    border-top: 2px solid #e5e5e5;
+                }
+    
+                div {
+                    float: left;
+                    width: 50%;
+                    text-align: right;
+                    color: #252525;
+                }
+    
+                .name {
+                    color: #808080;
+                    float: left;
+                    text-align: left;
+                }
+            }
+        }
+    }
+    .right-bar {
+        float: right;
+        width: 71%;
+
+        .switcher {
+            float: right;
+        }
+
+        .caption {
+            padding-left: 39px;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+<div>
+    <div class="legend-item" *ngFor="let item of items">
+        <div class="color" [ngStyle]="{ 'background-color': item.color }"></div>
+        <div class="field">{{ item.name }}</div>
+    </div>
+</div>

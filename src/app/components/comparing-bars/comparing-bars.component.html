@@ -1,0 +1,33 @@
+<div>
+    <div class="caption">{{caption}}</div>
+    <app-parameters [parameters]="parameters" [day]="type === 'day'"></app-parameters>
+    <div class="switcher">
+        <app-date-switcher [type]="type" (onChange)="dateChanged($event)"></app-date-switcher>
+    </div>
+    <div class="chart">
+        <dx-chart
+            [dataSource]="dataSource"
+            [customizePoint]="customizePoint"
+        >
+            <dxo-size [height]="215"></dxo-size>
+            <dxo-common-series-settings argumentField="Criteria" type="bar" hoverMode="onlyPoint" selectionMode="onlyPoint" [minBarSize]="5"></dxo-common-series-settings>
+            <dxo-legend [visible]="false"></dxo-legend>
+            <dxo-argument-axis>
+                <dxo-label [customizeText]="customizeArgumentLabel"></dxo-label>
+            </dxo-argument-axis>
+            <dxo-tooltip [enabled]="true" [paddingTopBottom]="8" [customizeTooltip]="customizeTooltip" [format]="tooltipFormat">
+                <dxo-font [opacity]="1" [size]="22"></dxo-font>
+                <dxo-shadow [opacity]="0.15" [blur]="0" [offsetX]="3" [offsetY]="3" color="#000"></dxo-shadow>
+            </dxo-tooltip>
+            <dxi-value-axis [axisDivisionFactor]="40" [placeholderSize]="45" [max]="maxAxisValue">
+                <dxo-label [format]="format" [customizeText]="customizeValueLabel"></dxo-label>
+            </dxi-value-axis>
+            <dxi-series [valueField]="pastValueField" [name]="pastName" color="rgba(175, 175, 175, 0.45)">
+                <dxo-hover-style color="rgba(175, 175, 175, 0.45)">
+                    <dxo-hatching [opacity]="0"></dxo-hatching>
+                </dxo-hover-style>
+            </dxi-series>
+            <dxi-series [valueField]="presentValueField" [name]="presentName"></dxi-series>
+        </dx-chart>
+    </div>
+</div>

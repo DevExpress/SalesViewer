@@ -1,0 +1,65 @@
+.sales-by-range {
+    height: 310px;
+    padding: 10px 50px 20px 0;
+    margin: 0 auto;
+    max-width: 1250px;
+    min-width: 960px;
+
+    .title {
+        font-size: 14px;
+        color: gray;
+        font-weight: 400;
+    }
+
+    .doughnut-container {
+        float: left;
+        height: 100%;
+        width: 29%;
+        max-width: 310px;
+        position: relative;
+
+        .title {
+            position: absolute;
+            top: 50%;
+            margin-top: -19px;
+            height: 38px;
+            text-align: center;
+            left: 30%;
+            width: 40%;
+        }
+
+        dx-pie-chart {
+            height: 100%;
+        }
+    }
+    .bar-container {
+        height: 100%;
+        width: 71%;
+        float: right;
+        position: relative;
+        padding-top: 20px;
+
+        .year, .title {
+            padding-left: 38px;
+        }
+
+        .year {
+            font-size: 28px;
+            color: #252525;
+            font-weight: 200;
+        }
+
+        dx-chart {
+            height: 190px;
+            padding-top: 10px;
+        }
+    }
+}
+
+.range-selector {
+    height: 90px;
+    padding: 10px 16px 30px 16px;
+    margin: 0 auto;
+    max-width: 1270px;
+    min-width: 960px;
+}

@@ -1,0 +1,48 @@
+.switcher {
+    display: inline-block;
+    position: relative;
+    margin: 0 20px;
+    color: #808080;
+    font-size: 14px;
+    padding-top: 2px;
+    line-height: 20px;
+    z-index: 1;
+
+    .date {
+        display: inline-block;
+        width: 70px;
+        text-align: center;
+
+        &.day {
+            width: 90px;
+        }
+    }
+
+    .switcher-prev, .switcher-next {
+        cursor: pointer;
+        width: 15px;
+        height: 20px;
+        position: absolute;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .switcher-prev {
+        left: -25px;
+        background: url(/assets/images/switcher-prev.png) center no-repeat;
+    }
+
+    .switcher-next {
+        right: -25px;
+        background: url(/assets/images/switcher-next.png) center no-repeat;
+    }
+
+    .disabled {
+        opacity: 0.25;
+        cursor: default;
+    }
+}

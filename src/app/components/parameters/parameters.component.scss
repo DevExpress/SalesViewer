@@ -1,0 +1,16 @@
+.line {
+    border-top: 2px solid #e5e5e5;
+    padding-left: 1px;
+    .parameters {
+        float: left;
+        font-size: 14px;
+        padding-right: 25px;
+        padding-top: 5px;
+        padding-bottom: 1px;
+        color: #808080;
+
+        .parameter {
+            color: #252525;
+        }
+    }
+}

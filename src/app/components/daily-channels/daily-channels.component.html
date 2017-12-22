@@ -1,0 +1,57 @@
+<div>
+    <div class="bars">
+        <div class="left-bar">
+            <div class="caption">DAILY SUMMARY</div>
+            <div class="vars">
+                <div class="row" *ngFor="let key of summaryKeys()">
+                    <div class="name">{{ key }}</div>
+                    <div>{{ summaryData[key] | currency:'USD':true:'1.0-0' }}</div>
+                </div>
+                <div class="row total">
+                    <div class="name">Total</div>
+                    <div>{{ summary | currency:'USD':true:'1.0-0' }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="right-bar">
+            <div class="caption">DAILY SALES PERFORMANCE</div>
+            <app-date-switcher class="switcher" type="day" [date]="lastDate" (onChange)="dateChanged($event)"></app-date-switcher>
+            <dx-chart
+                [dataSource]="channelsDataSource"
+            >
+                <dxo-size [height]="250"></dxo-size>
+                <dxi-pane>
+                    <dxo-border [visible]="true"></dxo-border>
+                </dxi-pane>
+                <dxo-argument-axis [valueMarginsEnabled]="false" [placeholderSize]="25" argumantType="datetime">
+                    <dxo-grid [visible]="true"></dxo-grid>
+                    <dxo-tick-interval [hours]="1"></dxo-tick-interval>
+                    <dxo-minor-tick-interval [minutes]="30"></dxo-minor-tick-interval>
+                    <dxo-minor-grid [visible]="true" [opacity]="1"></dxo-minor-grid>
+                    <dxo-label overlappingBehavior="none" format="shorttime" [customizeText]="customizeLabel"></dxo-label>
+                </dxo-argument-axis>
+                <dxi-value-axis [placeholderSize]="40" valueType="numeric">
+                    <dxo-grid [visible]="true"></dxo-grid>
+                    <dxo-label format="thousands"></dxo-label>
+                </dxi-value-axis>
+                <dxo-common-series-settings type="line" argumentField="SaleDate"></dxo-common-series-settings>
+                <dxo-legend [visible]="false"></dxo-legend>
+                <dxi-series valueField="Consultants" name="Consultants">
+                    <dxo-point [visible]="false"></dxo-point>
+                </dxi-series>
+                <dxi-series valueField="Direct" name="Direct">
+                    <dxo-point [visible]="false"></dxo-point>
+                </dxi-series>
+                <dxi-series valueField="Resellers" name="Resellers">
+                    <dxo-point [visible]="false"></dxo-point>
+                </dxi-series>
+                <dxi-series valueField="Retail" name="Retail">
+                    <dxo-point [visible]="false"></dxo-point>
+                </dxi-series>
+                <dxi-series valueField="VARs" name="VARs">
+                    <dxo-point [visible]="false"></dxo-point>
+                </dxi-series>
+            </dx-chart>
+        </div>
+    </div>
+</div>

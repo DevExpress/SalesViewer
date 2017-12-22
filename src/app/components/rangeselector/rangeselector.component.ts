@@ -1,50 +1,41 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-rangeselector',
-  templateUrl: './rangeselector.component.html',
-  styleUrls: ['./rangeselector.component.scss'],
-  providers: [DataService]
+    selector: 'app-rangeselector',
+    templateUrl: './rangeselector.component.html',
+    styleUrls: ['./rangeselector.component.scss'],
+    providers: [DataService]
 })
 export class RangeSelectorComponent implements OnInit {
     @Output() onChange: EventEmitter<any> = new EventEmitter();
+    @Input() shutterColor = '#fff';
 
     currentYear: number;
     thisYear: number = new Date().getFullYear();
     dataSource: Array<Object>;
 
-    change(event: any): void {
-        this.onChange.emit(event);
+    private correctOffset(offset: number): boolean {
+        let neededYear = this.currentYear + offset;
+        return neededYear <= this.thisYear && neededYear >= this.thisYear - 2;
     }
 
+    change(event: any): void {
+        Promise.resolve().then(() => this.onChange.emit(event));
+    }
+    
     changeYear(offset: number): void {
 
-        function correctOffset(off: number): boolean {
-            let neededYear = this.currentYear + off;
-            return neededYear <= this.thisYear && neededYear >= this.thisYear - 2;
-        }
-
-        if(!correctOffset.call(this, offset)) {
+        if(!this.correctOffset(offset)) {
             return;
         }
 
         this.currentYear += offset;
 
-        const from = new Date(this.currentYear, 0, 1);
-        const to = new Date(this.currentYear, 11, 31);
-
-        let datePipe = new DatePipe('en-US');
-
         this.dataService.getData('sales', {
-            startDate: datePipe.transform(from, 'yyyy-MM-dd'),
-            endDate: datePipe.transform(to, 'yyyy-MM-dd')
-        }).subscribe(data => {
-            if(data && data.length) {
-                this.dataSource = data.slice(0, -1);
-            }
-        });
+            startDate: new Date(this.currentYear, 0, 1),
+            endDate: new Date(this.currentYear, 11, 31)
+        }).subscribe(data => this.dataSource = data);
     }
 
     constructor(private dataService: DataService) { }

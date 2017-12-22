@@ -8,9 +8,10 @@
         width: 30px;
         height: 30px;
         position: absolute;
-        top: 35px;
+        top: 30px;
         background-size: 24px 24px;
         background-repeat: no-repeat;
+        background-position: center center; 
         cursor: pointer;
         &.disabled {
             cursor: default;
@@ -20,11 +21,10 @@
 
     .left-arrow {
         background-image: url(/assets/images/prev.png);
-        left: -5px;
     }
 
     .right-arrow {
-        right: -7px;
         background-image: url(/assets/images/next.png);
+        right: 0;
     }
 }

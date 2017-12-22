@@ -1,0 +1,16 @@
+<div>
+    <app-caption caption="REVENUE BY {{ criteria | uppercase }}"></app-caption>
+    <div class="bars">
+        <div class="left-bar">
+            <app-comparing-bars type="day" [category]="criteria"></app-comparing-bars>
+        </div>
+        <div class="right-bar">
+            <app-comparing-bars type="month" [category]="criteria"></app-comparing-bars>
+        </div>
+    </div>
+    
+    <div class="gray-line">
+        <app-sales-by-range category="{{ criteria | uppercase }}"></app-sales-by-range>
+    </div>
+    <div class="gray-line empty"></div>
+</div>

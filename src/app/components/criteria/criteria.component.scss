@@ -1,0 +1,28 @@
+.bars {
+    height: 275px;
+    padding: 0 50px 50px 50px;
+    margin: 0 auto;
+    min-width: 800px;
+    max-width: 1200px;
+
+    .left-bar, .right-bar {
+        float: left;
+        width: 46%;
+    }
+
+    .left-bar {
+        padding-right: 4%;
+    }
+
+    .right-bar {
+        padding-left: 4%;
+    }
+}
+
+.gray-line {
+    background: #f5f5f5;
+
+    &.empty {
+        height: calc(100vh - 1020px);
+    }
+}

@@ -1,0 +1,7 @@
+.gray-line {
+    background: #f5f5f5;
+
+    &.empty {
+        height: calc(100vh - 1020px);
+    }
+}

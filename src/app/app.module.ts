@@ -5,7 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {
     DxMenuModule,
     DxRangeSelectorModule,
-    DxPopupModule
+    DxPopupModule,
+    DxChartModule,
+    DxPieChartModule
 } from 'devextreme-angular';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +22,14 @@ import { SalesComponent } from './views/sales/sales.component';
 import { CustomersComponent } from './views/customers/customers.component';
 import { RangeSelectorComponent } from './components/rangeselector/rangeselector.component';
 import { HelpPopupComponent } from './components/help-popup/help-popup.component';
+import { SalesByRangeComponent } from './components/sales-by-range/sales-by-range.component';
+import { DateSwitcherComponent } from './components/date-switcher/date-switcher.component';
+import { ComparingBarsComponent } from './components/comparing-bars/comparing-bars.component';
+import { ParametersComponent } from './components/parameters/parameters.component';
+import { CaptionComponent } from './components/caption/caption.component';
+import { CriteriaComponent } from './components/criteria/criteria.component';
+import { LegendComponent } from './components/legend/legend.component';
+import { DailyChannelsComponent } from './components/daily-channels/daily-channels.component';
 
 @NgModule({
     declarations: [
@@ -33,7 +43,15 @@ import { HelpPopupComponent } from './components/help-popup/help-popup.component
         SalesComponent,
         CustomersComponent,
         RangeSelectorComponent,
-        HelpPopupComponent
+        HelpPopupComponent,
+        SalesByRangeComponent,
+        DateSwitcherComponent,
+        ComparingBarsComponent,
+        ParametersComponent,
+        CaptionComponent,
+        CriteriaComponent,
+        LegendComponent,
+        DailyChannelsComponent
     ],
     imports: [
         BrowserModule,
@@ -42,7 +60,9 @@ import { HelpPopupComponent } from './components/help-popup/help-popup.component
 
         DxMenuModule,
         DxRangeSelectorModule,
-        DxPopupModule
+        DxPopupModule,
+        DxChartModule,
+        DxPieChartModule
     ],
     providers: [],
     bootstrap: [AppComponent]
