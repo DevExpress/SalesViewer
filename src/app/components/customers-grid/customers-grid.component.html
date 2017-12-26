@@ -1,0 +1,18 @@
+<dx-data-grid
+    [dataSource]="gridDataSource"
+    [showColumnLines]="false"
+    [showRowLines]="false"
+    (onSelectionChanged)="customerChanged($event)"
+    [(selectedRowKeys)]="selectedRows"
+>
+    <dxo-paging [pageSize]="4"></dxo-paging>
+    <dxo-selection mode="single"></dxo-selection>
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxi-column dataField="name" dataType="string" width="20%"></dxi-column>
+    <dxi-column dataField="address" dataType="string" width="22%"></dxi-column>
+    <dxi-column dataField="city" dataType="string" width="10%"></dxi-column>
+    <dxi-column dataField="state" dataType="string" width="8%"></dxi-column>
+    <dxi-column dataField="postalCode" dataType="string" width="12%" alignment="left"></dxi-column>
+    <dxi-column dataField="phone" dataType="string" width="15%"></dxi-column>
+    <dxi-column dataField="fax" dataType="string" width="13%"></dxi-column>
+</dx-data-grid>

@@ -7,7 +7,9 @@ import {
     DxRangeSelectorModule,
     DxPopupModule,
     DxChartModule,
-    DxPieChartModule
+    DxPieChartModule,
+    DxVectorMapModule,
+    DxDataGridModule
 } from 'devextreme-angular';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,6 +32,7 @@ import { CaptionComponent } from './components/caption/caption.component';
 import { CriteriaComponent } from './components/criteria/criteria.component';
 import { LegendComponent } from './components/legend/legend.component';
 import { DailyChannelsComponent } from './components/daily-channels/daily-channels.component';
+import { CustomersGridComponent } from './components/customers-grid/customers-grid.component';
 
 @NgModule({
     declarations: [
@@ -51,7 +54,8 @@ import { DailyChannelsComponent } from './components/daily-channels/daily-channe
         CaptionComponent,
         CriteriaComponent,
         LegendComponent,
-        DailyChannelsComponent
+        DailyChannelsComponent,
+        CustomersGridComponent
     ],
     imports: [
         BrowserModule,
@@ -62,7 +66,9 @@ import { DailyChannelsComponent } from './components/daily-channels/daily-channe
         DxRangeSelectorModule,
         DxPopupModule,
         DxChartModule,
-        DxPieChartModule
+        DxPieChartModule,
+        DxVectorMapModule,
+        DxDataGridModule
     ],
     providers: [],
     bootstrap: [AppComponent]

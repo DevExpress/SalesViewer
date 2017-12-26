@@ -1,3 +1,76 @@
-<p>
-    customers works!
-</p>
+<app-caption caption="CUSTOMERS"></app-caption>
+<div class="data-grid">
+    <app-customers-grid (onChange)="customerChanged($event)"></app-customers-grid>
+</div>
+<div class="charts">
+    <div class="map">
+        <dx-vector-map
+            [zoomFactor]="3.5"
+            [center]="[ -40, 35 ]"
+        >
+            <dxo-tooltip [enabled]="true" borderColor="#d9d9d9" color="#fff" [paddingTopBottom]="2" [customizeTooltip]="customizeMapTooltip">
+                <dxo-font color="#f05b41" [opacity]="1" size="18"></dxo-font>
+                <dxo-shadow [opacity]="0.15" [blur]="0" color="#000" [offsetX]="3" [offsetY]="3"></dxo-shadow>
+            </dxo-tooltip>
+            <dxo-size [height]="310"></dxo-size>
+            <dxi-layer
+                [data]="world"
+                color="#d6d7da"
+                borderColor="#d6d7da"
+                hoveredBorderColor="#d6d7da"
+            ></dxi-layer>
+            <dxi-layer
+                [data]="citySales"
+                elementType="bubble"
+                color="#f05b41"
+                hoveredColor="transparent"
+                borderColor="#f05b41"
+                hoveredBorderColor="#f05b41"
+                [borderWidth]="7"
+                [hoveredBorderWidth]="7"
+                [minSize]="10"
+                [maxSize]="35"
+                dataField="sales"
+            ></dxi-layer>
+        </dx-vector-map>
+    </div>
+    <div class="bar">
+        <dx-chart
+            [rotated]="true"
+            [dataSource]="productsSales"
+            [equalBarWidth]="false"
+        >
+            <dxo-title horizontalAlignment="left" text="PURCHASES BY PRODUCT">
+                <dxo-font color="#808080" [size]="14" [weight]="400"></dxo-font>
+                <dxo-margin [left]="16"></dxo-margin>
+            </dxo-title>
+            <dxo-argument-axis [placeholderSize]="17">
+                <dxo-label [visible]="false"></dxo-label>
+            </dxo-argument-axis>
+            <dxi-value-axis [placeholderSize]="30">
+                <dxo-label format="currency millions" [indentFromAxis]="5"></dxo-label>
+            </dxi-value-axis>
+            <dxo-common-series-settings argumentField="Criteria" valueField="Sales" type="bar">
+                <dxo-hover-style>
+                    <dxo-hatching [opacity]="0" [step]="6" [width]="2"></dxo-hatching>
+                </dxo-hover-style>
+            </dxo-common-series-settings>
+            <dxo-series-template nameField="Criteria"></dxo-series-template>
+            <dxo-legend
+                [visible]="true"
+                [columnCount]="2"
+                orientation="horizontal"
+                horizontalAlignment="left"
+                verticalAlignment="bottom"
+                itemTextPosition="right"
+                [customizeText]="customizeLegendText"
+            >
+                <dxo-margin [left]="17"></dxo-margin>
+            </dxo-legend>
+            <dxo-size [height]="310"></dxo-size>
+        </dx-chart>
+    </div>
+</div>
+<div class="range-selector">
+    <app-rangeselector (onChange)="rangeChanged($event)"></app-rangeselector>
+</div>

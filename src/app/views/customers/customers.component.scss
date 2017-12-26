@@ -1,0 +1,41 @@
+.range-selector {
+    height: 90px;
+    padding: 10px 16px 30px 16px;
+    margin: 0 auto;
+    max-width: 1270px;
+    min-width: 960px;
+}
+
+.data-grid {
+    min-width: 800px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    margin-bottom: 15px;
+
+    app-customers-grid {
+        display: block;
+        margin-left: -7px;
+    }
+}
+
+.charts {
+    min-width: 800px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    margin-bottom: 30px;
+    height: 310px;
+
+    .map {
+        float: left;
+        width: 56%;
+        height: 100%;
+    }
+
+    .bar {
+        float: right;
+        width: 40%;
+        height: 100%;
+    }
+}
