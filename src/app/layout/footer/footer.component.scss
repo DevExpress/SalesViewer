@@ -1,11 +1,17 @@
 $hoverColor: #525362;
-$selectColor: #da5859;
+$selectColor: #f05b41;
 $textColor: #fff;
 $footerHeight: 60px;
 $padding: 50px;
 
+:host {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 .footer {
-    font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,san-serif;
     background-color: #343547;
 
     .content {
