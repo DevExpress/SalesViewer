@@ -9,7 +9,8 @@ import {
     DxChartModule,
     DxPieChartModule,
     DxVectorMapModule,
-    DxDataGridModule
+    DxDataGridModule,
+    DxBulletModule
 } from 'devextreme-angular';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -68,7 +69,8 @@ import { CustomersGridComponent } from './components/customers-grid/customers-gr
         DxChartModule,
         DxPieChartModule,
         DxVectorMapModule,
-        DxDataGridModule
+        DxDataGridModule,
+        DxBulletModule
     ],
     providers: [],
     bootstrap: [AppComponent]

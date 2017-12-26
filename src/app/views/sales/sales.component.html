@@ -1,3 +1,40 @@
-<p>
-    sales works!
-</p>
+<div>
+    <app-caption caption="SALES BY DATE RANGE"></app-caption>
+    <div class="data-grid">
+        <dx-data-grid [dataSource]="dataSource" [height]="568" [allowColumnReordering]="true" [rowAlternationEnabled]="true" [showRowLines]="false">
+            <dxo-paging [pageSize]="25"></dxo-paging>
+            <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[10, 25, 50, 100]"></dxo-pager>
+            <dxo-search-panel [visible]="true" [highlightCaseSensitive]="true"></dxo-search-panel>
+            <dxo-group-panel [visible]="true"></dxo-group-panel>
+            <dxi-column dataField="Product"></dxi-column>
+            <dxi-column dataField="Amount" caption="Sale Amount" dataType="number" format="currency" alignment="right"></dxi-column>
+            <dxi-column dataField="Discount" caption="Discount %" dataType="number" format="percent" alignment="right" [allowGrouping]="false" [width]="150" cellTemplate="cellTemplate"></dxi-column>
+            <dxi-column dataField="SaleDate" dataType="date"></dxi-column>
+            <dxi-column dataField="Region" dataType="string" [groupIndex]="0"></dxi-column>
+            <dxi-column dataField="Sector" dataType="string"></dxi-column>
+            <dxi-column dataField="Channel" dataType="string"></dxi-column>
+            <dxi-column dataField="Customer" dataType="string" [width]="150"></dxi-column>
+            <div *dxTemplate="let cell of 'cellTemplate'" class="bullet-container">
+                <dx-bullet
+                [value]="cell.value * 100"
+                [target]="50"
+                [endScaleValue]="100"
+                [startScaleValue]="0"
+                [showTarget]="false"
+                [showZeroLevel]="true"
+                color="#f05b41"
+                >
+                    <dxo-size [width]="150" [height]="35"></dxo-size>
+                    <dxo-margin [top]="5" [bottom]="0" [left]="5"></dxo-margin>
+                    <dxo-tooltip [enabled]="true" [paddingTopBottom]="2" [zIndex]="5" [customizeTooltip]="customizeTooltip">
+                        <dxo-font color="#f05b41" [opacity]="1" [size]="18"></dxo-font>
+                        <dxo-shadow [opacity]="0.15" [blur]="0" color="#000" [offsetX]="3" [offsetY]="3"></dxo-shadow>
+                    </dxo-tooltip>
+                </dx-bullet>
+            </div>
+        </dx-data-grid>
+    </div>
+    <div class="range-selector">
+        <app-rangeselector (onChange)="onRangeChanged($event)"></app-rangeselector>
+    </div>
+</div>
