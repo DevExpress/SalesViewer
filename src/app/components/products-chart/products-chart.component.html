@@ -1,0 +1,34 @@
+<div>
+    <dx-pie-chart
+        [dataSource]="dataSource"
+        type="doughnut"
+        sizeGroup="products-chart"
+        [innerRadius]="0.62"
+    >
+        <dxi-series argumentField="Criteria" valueField="Sales">
+            <dxo-hover-style>
+                <dxo-hatching [opacity]="0" [step]="6" [width]="2"></dxo-hatching>
+            </dxo-hover-style>
+        </dxi-series>
+        <dxo-legend
+            verticalAlignment="bottom"
+            horizontalAlignment="center"
+            itemTextPosition="right"
+            [rowItemSpacing]="5"
+            [columnCount]="2"
+            [rowCount]="3"
+            orientation="vertical"
+            [paddingLeftRight]="0"
+            [paddingTopBottom]="0"
+        >
+            <dxo-font color="#808080" [size]="12" [opacity]="1"></dxo-font>
+        </dxo-legend>
+        <dxo-tooltip [enabled]="true" color="#fff" [paddingTopBottom]="10" [customizeTooltip]="customizeTooltip">
+            <dxo-border [visible]="false"></dxo-border>
+            <dxo-font color="#252525" [opacity]="1" [size]="18"></dxo-font>
+            <dxo-shadow [opacity]="0.15" [blur]="0" color="#000" [offsetX]="3" [offsetY]="3"></dxo-shadow>
+        </dxo-tooltip>
+        <dxo-size [height]="310"></dxo-size>
+    </dx-pie-chart>
+</div>
+<div class="pie-content">REVENUES<br>BY {{ category | uppercase }}</div>

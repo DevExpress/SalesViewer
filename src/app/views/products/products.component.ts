@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ProductsComponent implements OnInit {
+    product: any;
+    productId: number;
+    range: Array<Date>;
+
+    productChanged(product: any): void {
+        this.product = product;
+        this.productId = product.id;
+    }
+    rangeChanged(event: any): void {
+        this.range = event.value;
+    }
     constructor() { }
 
     ngOnInit() {

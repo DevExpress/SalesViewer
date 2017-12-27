@@ -34,6 +34,9 @@ import { CriteriaComponent } from './components/criteria/criteria.component';
 import { LegendComponent } from './components/legend/legend.component';
 import { DailyChannelsComponent } from './components/daily-channels/daily-channels.component';
 import { CustomersGridComponent } from './components/customers-grid/customers-grid.component';
+import { ProductsGridComponent } from './components/products-grid/products-grid.component';
+import { ProductsChartComponent } from './components/products-chart/products-chart.component';
+import { ProductsInfoComponent } from './components/products-info/products-info.component';
 
 @NgModule({
     declarations: [
@@ -56,7 +59,10 @@ import { CustomersGridComponent } from './components/customers-grid/customers-gr
         CriteriaComponent,
         LegendComponent,
         DailyChannelsComponent,
-        CustomersGridComponent
+        CustomersGridComponent,
+        ProductsGridComponent,
+        ProductsChartComponent,
+        ProductsInfoComponent
     ],
     imports: [
         BrowserModule,

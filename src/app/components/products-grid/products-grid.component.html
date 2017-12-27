@@ -1,0 +1,21 @@
+<div class="data-grid">
+    <dx-data-grid 
+        [dataSource]="gridDataSource"
+        [showColumnLines]="false"
+        [showRowLines]="false"
+        (onSelectionChanged)="selectionChanged()"
+        [(selectedRowKeys)]="selectedRows"
+    >
+        <dxo-paging [pageSize]="6"></dxo-paging>
+        <dxo-selection mode="single"></dxo-selection>
+        <dxi-column dataField="name" dataType="string" width="15%"></dxi-column>
+        <dxi-column dataField="description" dataType="string" width="30%"></dxi-column>
+        <dxi-column dataField="baseCost" dataType="number" width="10%" format="currency" alignment="right"></dxi-column>
+        <dxi-column dataField="listPrice" dataType="number" width="10%" format="currency" alignment="right"></dxi-column>
+        <dxi-column dataField="unitsInInventory" dataType="number" width="15%" alignment="right" cellTemplate="cellTemplate"></dxi-column>
+        <dxi-column dataField="unitsInManufacturing" dataType="number" width="20%" alignment="right"></dxi-column>
+        <div *dxTemplate="let cell of 'cellTemplate'">
+            <span [ngClass]="{ 'bold': cell.value < 0 }">{{ cell.value }}</span>
+        </div>
+    </dx-data-grid>
+</div>
