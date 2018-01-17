@@ -1,27 +1,39 @@
 # SalesViewer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.4.
+A sample Angular application simulating real-time data analysis. The app uses the following DevExtreme UI Widgets: dxDataGrid, dxChart, dxPieChart, dxRangeSelector, dxVectorMap, dxPopup.
 
-## Development server
+For more information about DevExtreme, visit [https://js.devexpress.com/](https://js.devexpress.com/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Prerequisites
 
-## Code scaffolding
+The app requires Node.js v.6.9.0 or higher and npm v.3 or higher. Learn how to install them from [this article](https://docs.npmjs.com/getting-started/installing-node). It is build using Angular CLI that you can install with the following command:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+npm install @angular/cli -g
+```
 
-## Build
+## Install Required Packages
+Run the following command to install the required packages:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+```
+npm install
+```
 
-## Running unit tests
+## Start the Development Server
+Run the following command to start the development server:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+ng serve
+```
 
-## Running end-to-end tests
+The app will be hosted on http://localhost:4200/. Changes in the source files are monitored, so you do not need to restart the server after editing the code.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Build the Project
+Run the following command to build the project:
 
-## Further help
+```
+ng build
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The build artifacts will be stored in the `dist/` directory. Run the previous command with the `-prod` flag to get the production build.
+
