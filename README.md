@@ -35,5 +35,8 @@ Run the following command to build the project:
 ng build
 ```
 
-The build artifacts will be stored in the `dist/` directory. Run the previous command with the `-prod` flag to get the production build.
+The build artifacts will be stored in the `dist/` directory. Run the previous command with the `--prod` flag to get the production build.
+
+## Live Example
+A live example is available at [https://devexpress.github.io/SalesViewer/](https://devexpress.github.io/SalesViewer/).
 
