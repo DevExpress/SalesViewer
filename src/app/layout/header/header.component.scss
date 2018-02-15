@@ -99,7 +99,6 @@ a.menu-item, a:active.menu-item, a:visited.menu-item {
             }
 
             .top-menu {
-                
                 float: left;
 
                 .menu-item {
@@ -114,19 +113,12 @@ a.menu-item, a:active.menu-item, a:visited.menu-item {
                     height: 100%;
                 }
 
-                ::ng-deep .dx-menu-item {
-                    &.dx-state-hover {
-                        background-color: $hoverColor;
-                    }
-
-                    &.dx-menu-item-expanded {
-                        background-color: $hoverColor;
-                    }
-
-                    &.dx-menu-item-has-submenu {
+                ::ng-deep {
+                    .dx-menu-item-wrapper:first-child {
                         width: 290px;
                         text-align: right;
-
+                        position: relative;
+    
                         &:after {
                             content: ' ';
                             display: block;
@@ -137,9 +129,19 @@ a.menu-item, a:active.menu-item, a:visited.menu-item {
                             top: 26px;
                             right: 20px;
                         }
-
+    
                         .menu-item {
                             padding-right: 46px;
+                        }
+                    }
+
+                    .dx-menu-item-expanded {
+                        background-color: $hoverColor;
+                    }
+
+                    .dx-menu-item {
+                        &.dx-state-hover {
+                            background-color: $hoverColor;
                         }
                     }
                 }
