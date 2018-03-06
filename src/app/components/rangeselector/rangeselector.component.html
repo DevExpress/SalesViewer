@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="left-arrow" [ngClass]="{ disabled: currentYear <= thisYear - 2 }" (click)="changeYear(-1)"></div>
+    <div class="dx-icon-chevronleft icon" [ngClass]="{ disabled: currentYear <= thisYear - 2 }" (click)="changeYear(-1)"></div>
     <dx-range-selector
         selectedRangeColor="rgba(0,0,0,0)"
         [dataSource]="dataSource"
@@ -10,7 +10,7 @@
         <dxo-indent [right]="34" [left]="34"></dxo-indent>
         <dxo-size [height]="90"></dxo-size>
         <dxo-slider-marker format="monthAndDay"></dxo-slider-marker>
-        <dxo-slider-handle color="black" [opacity]="0.1"></dxo-slider-handle>
+        <dxo-slider-handle [opacity]="0.1"></dxo-slider-handle>
         <dxo-chart>
             <dxi-series type="line" [opacity]="0.8" argumentField="SaleDate" valueField="Sales">
                 <dxo-point [visible]="false"></dxo-point>
@@ -19,12 +19,12 @@
         <dxo-scale tickInterval="month" minorTickInterval="day" valueType="datetime">
             <dxo-marker [visible]="false"></dxo-marker>
             <dxo-minor-tick [visible]="false"></dxo-minor-tick>
-            <dxo-tick color="black" [opacity]="0.1"></dxo-tick>
+            <dxo-tick [opacity]="0.1"></dxo-tick>
             <dxo-label>
-                <dxo-font color="#808080"></dxo-font>
+                <dxo-font [opacity]="0.6"></dxo-font>
             </dxo-label>
         </dxo-scale>
         <dxo-shutter [color]="shutterColor" [opacity]="0.75"></dxo-shutter>
     </dx-range-selector>
-    <div class="right-arrow" [ngClass]="{ disabled: currentYear >= thisYear }" (click)="changeYear(1)"></div>
+    <div class="dx-icon-chevronright icon" [ngClass]="{ disabled: currentYear >= thisYear }" (click)="changeYear(1)"></div>
 </div>

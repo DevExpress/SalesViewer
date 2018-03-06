@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription }   from 'rxjs/Subscription';
 import 'devextreme/data/odata/store';
 import DataSource from 'devextreme/data/data_source';
 import { DataService } from '../../services/data.service';
 import { DatePipe, DecimalPipe } from '@angular/common';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
     selector: 'app-sales',
@@ -11,11 +13,13 @@ import { DatePipe, DecimalPipe } from '@angular/common';
     providers: [DataService, DatePipe, DecimalPipe]
 })
 
-export class SalesComponent implements OnInit {
+export class SalesComponent implements OnInit, OnDestroy {
+    subscription: Subscription;
     dataSource: DataSource;
     private range: Array<Date>;
-
-    constructor(private dataService: DataService, private datePipe: DatePipe, private decimalPipe: DecimalPipe) { }
+    
+    bulletColor: string;
+    shutterColor: string;
 
     customizeTooltip = (pointInfo: any): any => {
         return { text: this.decimalPipe.transform(pointInfo.originalValue, '1.0-0') + '%' };
@@ -25,6 +29,14 @@ export class SalesComponent implements OnInit {
         this.range = event.value;
         this.dataSource.load();
     }
+
+    private applyThemeConstants = () => {
+        this.bulletColor = this.themeService.getThemeItem("bullet", "color");
+        this.shutterColor = this.themeService.getThemeItem("backgroundColor");
+    }
+
+    constructor(private dataService: DataService, private datePipe: DatePipe, private decimalPipe: DecimalPipe, private themeService: ThemeService) { }
+    
 
     ngOnInit() {
         let start = new Date();
@@ -45,5 +57,11 @@ export class SalesComponent implements OnInit {
                 }
             }
         });
+
+        this.subscription = this.themeService.themeChanged.subscribe(this.applyThemeConstants);
+    }
+
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
     }
 }

@@ -14,7 +14,7 @@
                 <app-products-chart category="channel" [productId]="productId" [range]="range"></app-products-chart>
             </div>
             <div class="range-selector">
-                <app-rangeselector shutterColor="#f5f5f5" (onChange)="rangeChanged($event)"></app-rangeselector>
+                <app-rangeselector [shutterColor]="shutterColor" (onChange)="rangeChanged($event)"></app-rangeselector>
             </div>
         </div>
     </div>

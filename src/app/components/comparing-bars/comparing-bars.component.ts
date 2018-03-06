@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { LegendService } from '../../services/legend.service';
+import { ThemeService } from '../../services/theme.service';
 import { DatePipe, DecimalPipe } from '@angular/common';
 
 const DAY_TYPE = 'day';
@@ -9,7 +9,7 @@ const DAY_TYPE = 'day';
     selector: 'app-comparing-bars',
     templateUrl: './comparing-bars.component.html',
     styleUrls: ['./comparing-bars.component.scss'],
-    providers: [DataService, LegendService, DecimalPipe, DatePipe]
+    providers: [DataService, DecimalPipe, DatePipe]
 })
 export class ComparingBarsComponent implements OnInit {
     @Input() type: string;
@@ -39,7 +39,7 @@ export class ComparingBarsComponent implements OnInit {
 
     customizePoint = (pointInfo: any): any => {
         if(pointInfo.seriesName === 'Today' || pointInfo.seriesName === 'ThisMonth') {
-            let color = this.legendService.getColor(this.category, pointInfo.argument);
+            let color = this.themeService.getColor(this.category, pointInfo.argument);
             return {
                 color: color,
                 hoverStyle: {
@@ -53,7 +53,7 @@ export class ComparingBarsComponent implements OnInit {
     }
 
     customizeTooltip = (pointInfo: any): any => {
-        let color = this.legendService.getColor(this.category, pointInfo.argument);
+        let color = this.themeService.getColor(this.category, pointInfo.argument);
         let value = this.type === DAY_TYPE ? pointInfo.valueText : this.decimalPipe.transform(pointInfo.value, '1.0-0');
         return {
             text: '<span style="font-size: 14px; color: #808080;">' + pointInfo.argumentText.toUpperCase() + '</span><br />'
@@ -120,7 +120,7 @@ export class ComparingBarsComponent implements OnInit {
 
     constructor(
         private dataService: DataService,
-        private legendService: LegendService,
+        private themeService: ThemeService,
         private decimalPipe: DecimalPipe,
         private datePipe: DatePipe
     ) { }

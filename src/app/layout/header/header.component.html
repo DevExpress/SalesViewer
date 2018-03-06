@@ -1,23 +1,39 @@
 <div class="header-container">
     <div class="content">
-        <a class="logo" href="/"></a>
+        <a class="logo" href="/">DEVEXPRESS <span class="dx-theme-accent-as-text-color">SALES VIEWER</span></a>
         <nav>
-            <dx-menu class="top-menu"
+            <dx-menu
                 cssClass="top-menu"
                 [activeStateEnabled]="false"
                 [height]="60"
                 [dataSource]="menuRoutes"
                 itemsExpr="children"
                 showFirstSubmenuMode="onHover"
+                hideSubmenuOnMouseLeave="true"
                 selectionMode="none"
             >
                 <div *dxTemplate="let i of 'item'">
-                    <a *ngIf="i.data" routerLink={{i.data.link}} routerLinkActive="selected" class="menu-item">{{i.data.title}}{{ selectedChild(i) }}</a>
+                    <a *ngIf="i.data" routerLink={{i.data.link}} routerLinkActive="dx-theme-accent-as-background-color" class="menu-item dx-theme-text-color">{{i.data.title}}{{ selectedChild(i) }}</a>
+                </div>
+            </dx-menu>
+            <dx-menu
+                cssClass="themes-menu"
+                [activeStateEnabled]="false"
+                [height]="60"
+                [dataSource]="menuThemes"
+                showFirstSubmenuMode="onHover"
+                hideSubmenuOnMouseLeave="true"
+                selectionMode="none"
+                (onItemClick)="changeTheme($event)"
+            >
+                <div *dxTemplate="let i of 'item'">
+                    <img *ngIf="i.icon" src="{{i.icon}}" class="dx-icon">
+                    <span *ngIf="i.text" class="dx-menu-item-text" [ngClass]="{ 'dx-theme-accent-as-text-color': i.value == currentTheme }">{{i.text}}</span>
                 </div>
             </dx-menu>
             <div class="help">
-                <span class="info-link" (click)="popup.show()">?</span>
-                <app-help-popup #popup></app-help-popup>
+                <span class="info-link" (click)="helpPopup.show()">?</span>
+                <app-help-popup #helpPopup></app-help-popup>
             </div>
         </nav>
     </div>

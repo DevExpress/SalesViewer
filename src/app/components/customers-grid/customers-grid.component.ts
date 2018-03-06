@@ -6,6 +6,7 @@ import { DataService } from '../../services/data.service';
 @Component({
     selector: 'app-customers-grid',
     templateUrl: './customers-grid.component.html',
+    styleUrls: ['./customers-grid.component.scss'],
     providers: [DataService]
 })
 export class CustomersGridComponent implements OnInit {

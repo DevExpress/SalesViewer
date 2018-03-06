@@ -8,7 +8,7 @@
     .caption {
         font-weight: 400;
         font-size: 14px;
-        color: #808080;
+        opacity: 0.6;
         display: inline-block;
         padding-bottom: 10px;
     }
@@ -30,18 +30,17 @@
 
                 &.total {
                     padding-top: 13px;
-                    border-top: 2px solid #e5e5e5;
+                    border-top: 2px solid rgba(150, 150, 150, 0.2);
                 }
     
                 div {
                     float: left;
                     width: 50%;
                     text-align: right;
-                    color: #252525;
                 }
     
                 .name {
-                    color: #808080;
+                    opacity: 0.6;
                     float: left;
                     text-align: left;
                 }

@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
+        "start": "ng serve --extract-css",
         "build": "ng build",
         "lint": "ng lint"
     },
@@ -18,9 +18,10 @@
         "@angular/platform-browser": "^4.2.4",
         "@angular/platform-browser-dynamic": "^4.2.4",
         "@angular/router": "^4.2.4",
+        "color": "^3.0.0",
         "core-js": "^2.4.1",
-        "devextreme": "^17.2.4",
-        "devextreme-angular": "^17.2.4",
+        "devextreme": "^17.2.6",
+        "devextreme-angular": "^17.2.6",
         "rxjs": "^5.4.2",
         "zone.js": "^0.8.14"
     },

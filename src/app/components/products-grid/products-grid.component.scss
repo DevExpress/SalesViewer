@@ -1,5 +1,11 @@
 .data-grid {
     margin-left: -7px;
+
+    dx-data-grid {
+        border-top-width: 1px;
+        border-top-style: solid;
+    }
+
     .bold {
         font-weight: bold;
     }

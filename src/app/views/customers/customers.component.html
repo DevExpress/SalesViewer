@@ -9,23 +9,22 @@
             [center]="[ -40, 35 ]"
         >
             <dxo-tooltip [enabled]="true" borderColor="#d9d9d9" color="#fff" [paddingTopBottom]="2" [customizeTooltip]="customizeMapTooltip">
-                <dxo-font color="#f05b41" [opacity]="1" size="18"></dxo-font>
+                <dxo-font [color]="bubbleColor" [opacity]="1" size="18"></dxo-font>
                 <dxo-shadow [opacity]="0.15" [blur]="0" color="#000" [offsetX]="3" [offsetY]="3"></dxo-shadow>
             </dxo-tooltip>
             <dxo-size [height]="310"></dxo-size>
             <dxi-layer
                 [data]="world"
-                color="#d6d7da"
-                borderColor="#d6d7da"
-                hoveredBorderColor="#d6d7da"
+                color="rgba(150, 150, 150, 0.6)"
+                borderColor="transparent"
+                hoveredBorderColor="transparent"
             ></dxi-layer>
             <dxi-layer
                 [data]="citySales"
                 elementType="bubble"
-                color="#f05b41"
                 hoveredColor="transparent"
-                borderColor="#f05b41"
-                hoveredBorderColor="#f05b41"
+                [borderColor]="bubbleColor"
+                [hoveredBorderColor]="bubbleColor"
                 [borderWidth]="7"
                 [hoveredBorderWidth]="7"
                 [minSize]="10"
@@ -41,7 +40,7 @@
             [equalBarWidth]="false"
         >
             <dxo-title horizontalAlignment="left" text="PURCHASES BY PRODUCT">
-                <dxo-font color="#808080" [size]="14" [weight]="400"></dxo-font>
+                <dxo-font [opacity]="0.6" [size]="14" [weight]="400"></dxo-font>
                 <dxo-margin [left]="16"></dxo-margin>
             </dxo-title>
             <dxo-argument-axis [placeholderSize]="17">
@@ -72,5 +71,5 @@
     </div>
 </div>
 <div class="range-selector">
-    <app-rangeselector (onChange)="rangeChanged($event)"></app-rangeselector>
+    <app-rangeselector (onChange)="rangeChanged($event)" [shutterColor]="shutterColor"></app-rangeselector>
 </div>

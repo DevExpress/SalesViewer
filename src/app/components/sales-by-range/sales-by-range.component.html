@@ -11,7 +11,7 @@
             <dxo-legend [visible]="false"></dxo-legend>
             <dxi-series argumentField="Criteria" valueField="Sales">
                 <dxo-label [visible]="true" backgroundColor="transparent" [radialOffset]="-15" [customizeText]="customizeLabel">
-                    <dxo-font [size]="12" color="#808080"></dxo-font>
+                    <dxo-font [size]="12" color="#909090"></dxo-font>
                     <dxo-connector [visible]="false" [width]="0"></dxo-connector>
                 </dxo-label>
             </dxi-series>
@@ -31,7 +31,7 @@
             <dxi-value-axis [valueMarginsEnabled]="false" [axisDivisionFactor]="80" [placeholderSize]="30">
                 <dxo-label [indentFromAxis]="5">
                     <dxo-format type="currency millions"></dxo-format>
-                    <dxo-font color="#808080"></dxo-font>
+                    <dxo-font [opacity]="0.6"></dxo-font>
                 </dxo-label>
             </dxi-value-axis>
             <dxo-common-series-settings argumentField="Criteria" valueField="Sales" type="bar">
@@ -49,5 +49,5 @@
     </div>
 </div>
 <div class="range-selector">
-    <app-rangeselector (onChange)="rangeChanged($event)" shutterColor="#f5f5f5"></app-rangeselector>
+    <app-rangeselector (onChange)="rangeChanged($event)" [shutterColor]="shutterColor"></app-rangeselector>
 </div>

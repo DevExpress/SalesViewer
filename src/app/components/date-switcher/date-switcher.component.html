@@ -1,5 +1,5 @@
 <div class="switcher">
-    <span class="switcher-next" [ngClass]="{'disabled': date >= currentDate}" (click)="update(1)"></span>
-    <span class="switcher-prev" [ngClass]="{'disabled': date <= endDate}" (click)="update(-1)"></span>
+    <span class="dx-icon-spinright icon" [ngClass]="{'disabled': date >= currentDate}" (click)="update(1)"></span>
+    <span class="dx-icon-spinleft icon" [ngClass]="{'disabled': date <= endDate}" (click)="update(-1)"></span>
     <span class="date" [ngClass]="type">{{ date | date: (type === 'day' ? 'mediumDate' : 'MMMM') | uppercase }}</span>
 </div>

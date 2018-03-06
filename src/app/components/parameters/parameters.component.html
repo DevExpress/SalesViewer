@@ -1,6 +1,6 @@
 <div class="line">
     <div class="parameters" *ngFor="let parameter of filteredParameters">
-        {{ parameter.name }}
+        <div class="parameter-name">{{ parameter.name }}</div>
         <div *ngIf="day; then currency; else number"></div>
         <ng-template #currency><div class="parameter" >{{ parameter.data / 1000 | currency:'USD':true:'1.0-0' }}K</div></ng-template>
         <ng-template #number><div class="parameter" >{{ parameter.data | number}}</div></ng-template>

@@ -16,7 +16,7 @@ export class DataService {
                 if(data[property] instanceof Date) {
                     let format = 'yyyy-MM-dd';
                     if(property === 'now') {
-                        format += ' HH:mm';
+                        format += ' HH:00';
                     }
                     data[property] = datePipe.transform(data[property], format);
                 }

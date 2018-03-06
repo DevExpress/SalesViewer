@@ -1,19 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { LegendService } from '../../services/legend.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
     selector: 'app-legend',
     templateUrl: './legend.component.html',
-    styleUrls: ['./legend.component.scss'],
-    providers: [LegendService]
+    styleUrls: ['./legend.component.scss']
 })
-export class LegendComponent implements OnInit {
+export class LegendComponent implements OnInit, OnDestroy {
+    subscription: Subscription;
     items: Array<any>;
 
-    constructor(private legendService: LegendService) { }
+    private applyThemeConstants = () => this.items = this.themeService.getLegendItems('channel');
+
+    constructor(private themeService: ThemeService) { }
 
     ngOnInit() {
-        this.items = this.legendService.getLegendItems('channel');
+        this.subscription = this.themeService.themeChanged.subscribe(this.applyThemeConstants);
     }
 
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
+    }
 }

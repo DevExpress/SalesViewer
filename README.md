@@ -1,6 +1,6 @@
 # SalesViewer
 
-A sample Angular application simulating real-time data analysis. The app uses the following DevExtreme UI Widgets: dxDataGrid, dxChart, dxPieChart, dxRangeSelector, dxVectorMap, dxPopup.
+A sample Angular application simulating real-time data analysis. The app uses the following DevExtreme UI Widgets: dxDataGrid, dxChart, dxPieChart, dxRangeSelector, dxVectorMap, dxPopup, dxButton, dxMenu.
 
 For more information about DevExtreme, visit [https://js.devexpress.com/](https://js.devexpress.com/).
 

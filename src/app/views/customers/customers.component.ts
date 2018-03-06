@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription }   from 'rxjs/Subscription';
 import { DataService } from '../../services/data.service';
 import * as worldMapData from 'devextreme/dist/js/vectormap-data/world.js';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
     selector: 'app-customers',
@@ -8,8 +10,8 @@ import * as worldMapData from 'devextreme/dist/js/vectormap-data/world.js';
     styleUrls: ['./customers.component.scss'],
     providers: [DataService]
 })
-export class CustomersComponent implements OnInit {
-
+export class CustomersComponent implements OnInit, OnDestroy {
+    subscription: Subscription;
     world: any = worldMapData.world;
     citySales: Array<any>;
 
@@ -17,6 +19,9 @@ export class CustomersComponent implements OnInit {
     range: Array<Date>;
 
     productsSales: Array<any>;
+
+    bubbleColor: string;
+    shutterColor: string;
 
     update(): void {
         if(this.range && this.customerId) {
@@ -68,7 +73,19 @@ export class CustomersComponent implements OnInit {
         this.customerId = event.selectedRowKeys[0];
         this.update();
     }
-    constructor(private dataService: DataService) { }
 
-    ngOnInit() {}
+    private applyThemeConstants = () => {
+        this.bubbleColor = this.themeService.getThemeItem("map", "layer:marker:bubble", "color");
+        this.shutterColor = this.themeService.getThemeItem("backgroundColor");
+    }
+
+    constructor(private dataService: DataService, private themeService: ThemeService) { }
+
+    ngOnInit() {
+        this.subscription = this.themeService.themeChanged.subscribe(this.applyThemeConstants);
+    }
+
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
+    }
 }

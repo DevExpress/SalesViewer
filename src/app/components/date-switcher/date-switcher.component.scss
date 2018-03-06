@@ -2,7 +2,7 @@
     display: inline-block;
     position: relative;
     margin: 0 20px;
-    color: #808080;
+    opacity: 0.6;
     font-size: 14px;
     padding-top: 2px;
     line-height: 20px;
@@ -18,10 +18,10 @@
         }
     }
 
-    .switcher-prev, .switcher-next {
+    .icon {
         cursor: pointer;
-        width: 15px;
-        height: 20px;
+        font-size: 20px;
+        opacity: 0.6;
         position: absolute;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -31,14 +31,12 @@
         user-select: none;
     }
 
-    .switcher-prev {
+    .dx-icon-spinleft {
         left: -25px;
-        background: url(/assets/images/switcher-prev.png) center no-repeat;
     }
 
-    .switcher-next {
+    .dx-icon-spinright {
         right: -25px;
-        background: url(/assets/images/switcher-next.png) center no-repeat;
     }
 
     .disabled {

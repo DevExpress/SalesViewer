@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ThemeService } from './services/theme.service';
 
 import {
     DxMenuModule,
@@ -10,7 +11,8 @@ import {
     DxPieChartModule,
     DxVectorMapModule,
     DxDataGridModule,
-    DxBulletModule
+    DxBulletModule,
+    DxButtonModule
 } from 'devextreme-angular';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -76,9 +78,10 @@ import { ProductsInfoComponent } from './components/products-info/products-info.
         DxPieChartModule,
         DxVectorMapModule,
         DxDataGridModule,
-        DxBulletModule
+        DxBulletModule,
+        DxButtonModule
     ],
-    providers: [],
+    providers: [ThemeService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

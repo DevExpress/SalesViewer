@@ -1,7 +1,7 @@
 <div>
     <app-caption caption="SALES BY DATE RANGE"></app-caption>
     <div class="data-grid">
-        <dx-data-grid [dataSource]="dataSource" [height]="568" [allowColumnReordering]="true" [rowAlternationEnabled]="true" [showRowLines]="false">
+        <dx-data-grid [dataSource]="dataSource" [height]="568" [allowColumnReordering]="true" [rowAlternationEnabled]="true" [showRowLines]="false" class="dx-theme-border-color">
             <dxo-paging [pageSize]="25"></dxo-paging>
             <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[10, 25, 50, 100]"></dxo-pager>
             <dxo-search-panel [visible]="true" [highlightCaseSensitive]="true"></dxo-search-panel>
@@ -22,12 +22,11 @@
                     [startScaleValue]="0"
                     [showTarget]="false"
                     [showZeroLevel]="true"
-                    color="#f05b41"
                 >
                     <dxo-size [width]="150" [height]="35"></dxo-size>
                     <dxo-margin [top]="5" [bottom]="0" [left]="5"></dxo-margin>
                     <dxo-tooltip [enabled]="true" [paddingTopBottom]="2" [zIndex]="5" [customizeTooltip]="customizeTooltip">
-                        <dxo-font color="#f05b41" [opacity]="1" [size]="18"></dxo-font>
+                        <dxo-font [color]="bulletColor" [opacity]="1" [size]="18"></dxo-font>
                         <dxo-shadow [opacity]="0.15" [blur]="0" color="#000" [offsetX]="3" [offsetY]="3"></dxo-shadow>
                     </dxo-tooltip>
                 </dx-bullet>
@@ -35,6 +34,6 @@
         </dx-data-grid>
     </div>
     <div class="range-selector">
-        <app-rangeselector (onChange)="onRangeChanged($event)"></app-rangeselector>
+        <app-rangeselector (onChange)="onRangeChanged($event)" [shutterColor]="shutterColor"></app-rangeselector>
     </div>
 </div>

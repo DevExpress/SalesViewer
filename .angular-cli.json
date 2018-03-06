@@ -20,8 +20,12 @@
             "prefix": "app",
             "styles": [
                 "../node_modules/devextreme/dist/css/dx.common.css",
-                "../node_modules/devextreme/dist/css/dx.carmine.css",
-                "styles.scss"
+                "styles.scss",
+                { "input": "../node_modules/devextreme/dist/css/dx.carmine.css", "output": "dx.theme.carmine" },
+                { "input": "../node_modules/devextreme/dist/css/dx.darkmoon.css", "output": "dx.theme.darkmoon" },
+                { "input": "../node_modules/devextreme/dist/css/dx.greenmist.css", "output": "dx.theme.greenmist" },
+                { "input": "../node_modules/devextreme/dist/css/dx.darkviolet.css", "output": "dx.theme.darkviolet" },
+                { "input": "../node_modules/devextreme/dist/css/dx.softblue.css", "output": "dx.theme.softblue" }
             ],
             "scripts": [],
             "environmentSource": "environments/environment.ts",

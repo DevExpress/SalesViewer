@@ -14,6 +14,11 @@
     margin-bottom: 70px;
     height: 568px;
 
+    dx-data-grid {
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+    }
+
     .bullet-container {
         margin: -7px;
     }

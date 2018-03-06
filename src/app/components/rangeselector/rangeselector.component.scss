@@ -3,16 +3,13 @@
     height: 90px;
     overflow: hidden;
 
-    .left-arrow, .right-arrow {
+    .icon {
         display: inline-block;
-        width: 30px;
-        height: 30px;
+        font-size: 25px;
+        opacity: 0.6;
         position: absolute;
         z-index: 1;
         top: 30px;
-        background-size: 24px 24px;
-        background-repeat: no-repeat;
-        background-position: center center; 
         cursor: pointer;
         &.disabled {
             cursor: default;
@@ -20,12 +17,7 @@
         }
     }
 
-    .left-arrow {
-        background-image: url(/assets/images/prev.png);
-    }
-
-    .right-arrow {
-        background-image: url(/assets/images/next.png);
+    .dx-icon-chevronright {
         right: 0;
     }
 }

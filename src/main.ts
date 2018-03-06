@@ -4,10 +4,6 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import { currentTheme } from 'devextreme/viz/themes';
-
-currentTheme('generic.carmine');
-
 if (environment.production) {
     enableProdMode();
 }

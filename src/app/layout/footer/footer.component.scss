@@ -1,5 +1,3 @@
-$hoverColor: #525362;
-$selectColor: #f05b41;
 $textColor: #fff;
 $footerHeight: 60px;
 $padding: 50px;
@@ -12,7 +10,7 @@ $padding: 50px;
 }
 
 .footer {
-    background-color: #343547;
+    background-color: rgba(53, 53, 53, 0.9);
 
     .content {
         min-width: 900px - 2*$padding;
@@ -26,7 +24,6 @@ $padding: 50px;
             display: inline-block;
 
             h2 {
-                color: $selectColor;
                 font-weight: 400;
                 margin: 0;
                 font-size: 18px;
@@ -43,10 +40,10 @@ $padding: 50px;
 
         .dx-logo {
             float: right;
-            background: url(/assets/images/dx-logo.png) no-repeat;
-            margin-top: 6px;
+            background: url(/assets/images/dx-logo.svg) no-repeat;
+            margin-top: 10px;
             width: 160px;
-            height: 30px;
+            height: 27px;
             display: block;
         }
     }
