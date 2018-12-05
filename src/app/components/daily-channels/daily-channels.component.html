@@ -5,11 +5,11 @@
             <div class="vars">
                 <div class="row" *ngFor="let key of summaryKeys()">
                     <div class="name">{{ key }}</div>
-                    <div>{{ summaryData[key] | currency:'USD':true:'1.0-0' }}</div>
+                    <div>{{ summaryData[key] | currency:'USD':'symbol':'1.0-0' }}</div>
                 </div>
                 <div class="row total">
                     <div class="name">Total</div>
-                    <div>{{ summary | currency:'USD':true:'1.0-0' }}</div>
+                    <div>{{ summary | currency:'USD':'symbol':'1.0-0' }}</div>
                 </div>
             </div>
         </div>

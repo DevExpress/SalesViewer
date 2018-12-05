@@ -14,13 +14,13 @@
             </dxo-tooltip>
             <dxo-size [height]="310"></dxo-size>
             <dxi-layer
-                [data]="world"
+                [dataSource]="world"
                 color="rgba(150, 150, 150, 0.6)"
                 borderColor="transparent"
                 hoveredBorderColor="transparent"
             ></dxi-layer>
             <dxi-layer
-                [data]="citySales"
+                [dataSource]="citySales"
                 elementType="bubble"
                 hoveredColor="transparent"
                 [borderColor]="bubbleColor"
@@ -37,7 +37,6 @@
         <dx-chart
             [rotated]="true"
             [dataSource]="productsSales"
-            [equalBarWidth]="false"
         >
             <dxo-title horizontalAlignment="left" text="PURCHASES BY PRODUCT">
                 <dxo-font [opacity]="0.6" [size]="14" [weight]="400"></dxo-font>
@@ -49,7 +48,7 @@
             <dxi-value-axis [placeholderSize]="30">
                 <dxo-label format="currency millions" [indentFromAxis]="5"></dxo-label>
             </dxi-value-axis>
-            <dxo-common-series-settings argumentField="Criteria" valueField="Sales" type="bar">
+            <dxo-common-series-settings argumentField="Criteria" valueField="Sales" ignoreEmptyPoints="true" type="bar">
                 <dxo-hover-style>
                     <dxo-hatching [opacity]="0" [step]="6" [width]="2"></dxo-hatching>
                 </dxo-hover-style>

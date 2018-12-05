@@ -27,7 +27,7 @@ export class SalesComponent implements OnInit, OnDestroy {
 
     onRangeChanged(event: any): void {
         this.range = event.value;
-        this.dataSource.load();
+        this.dataSource.reload();
     }
 
     private applyThemeConstants = () => {

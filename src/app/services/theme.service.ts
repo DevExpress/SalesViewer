@@ -21,9 +21,13 @@ export class ThemeService {
         return this.criteria(category).indexOf(criteria);
     }
 
-    getColor(category: string, criteria: string) {
+    getColor(category: string, criteria: string): string {
         const palette: Array<string> = getPalette(this.getThemeItem('defaultPalette'))['simpleSet'];
         return palette[this.getCriteriaIndex(category, criteria)];
+    }
+
+    getAccentColor(): string {
+        return getPalette(this.getThemeItem('defaultPalette')).accentColor;
     }
 
     getLegendItems(category: string): Array<any> {

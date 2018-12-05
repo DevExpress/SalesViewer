@@ -23,7 +23,6 @@
         <dx-chart
             [rotated]="true"
             [dataSource]="barDataSource"
-            [equalBarWidth]="false"
         >
             <dxo-argument-axis [placeholderSize]="40">
                 <dxo-label [visible]="false"></dxo-label>
@@ -34,7 +33,7 @@
                     <dxo-font [opacity]="0.6"></dxo-font>
                 </dxo-label>
             </dxi-value-axis>
-            <dxo-common-series-settings argumentField="Criteria" valueField="Sales" type="bar">
+            <dxo-common-series-settings argumentField="Criteria" valueField="Sales" ignoreEmptyPoints="true" type="bar">
                 <dxo-hover-style>
                     <dxo-hatching [opacity]="0"></dxo-hatching>
                 </dxo-hover-style>

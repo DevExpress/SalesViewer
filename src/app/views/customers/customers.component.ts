@@ -75,7 +75,7 @@ export class CustomersComponent implements OnInit, OnDestroy {
     }
 
     private applyThemeConstants = () => {
-        this.bubbleColor = this.themeService.getThemeItem("map", "layer:marker:bubble", "color");
+        this.bubbleColor = this.themeService.getAccentColor();
         this.shutterColor = this.themeService.getThemeItem("backgroundColor");
     }
 
