@@ -20,6 +20,7 @@ export class SalesByRangeComponent implements OnInit, OnDestroy {
     barDataSource: Array<any>;
 
     shutterColor: string;
+    pieChartCenterColor: string;
 
     private getServiceName(): string {
         return this.category.toLowerCase() + 's';
@@ -51,10 +52,13 @@ export class SalesByRangeComponent implements OnInit, OnDestroy {
         });
     }
 
-    private applyThemeConstants = () => this.shutterColor = this.themeService.blendColor(
-        Color(this.themeService.getThemeItem("backgroundColor")),
-        Color("rgba(150, 150, 150, 0.1)") // gray-line background
-    ).toString();
+    private applyThemeConstants = () => {
+        this.pieChartCenterColor = this.themeService.getThemeItem("primaryTitleColor");
+        this.shutterColor = this.themeService.blendColor(
+            Color(this.themeService.getThemeItem("backgroundColor")),
+            Color("rgba(150, 150, 150, 0.1)") // gray-line background
+        ).toString();
+    }
 
     constructor(private dataService: DataService, private themeService: ThemeService) { }
 

@@ -1,11 +1,11 @@
 <div class="sales-by-range">
     <div class="doughnut-container">
-        <div class="title">{{category}} SALES<br>BY RANGE</div>
         <dx-pie-chart
             type="doughnut"
             [innerRadius]="0.62"
             [dataSource]="pieDataSource"
             [minDiameter]="0.7"
+            centerTemplate="centerTemplate"
         >
             <dxo-loading-indicator text=""></dxo-loading-indicator>
             <dxo-legend [visible]="false"></dxo-legend>
@@ -15,6 +15,12 @@
                     <dxo-connector [visible]="false" [width]="0"></dxo-connector>
                 </dxo-label>
             </dxi-series>
+            <svg *dxTemplate="let pieChart of 'centerTemplate'">
+                <text text-anchor="middle" style="font-size: 14px" x="100" y="120" [attr.fill]="pieChartCenterColor" opacity="0.6">
+                    <tspan x="100">{{category}} SALES</tspan>
+                    <tspan x="100" dy="20px">BY RANGE</tspan>
+                </text>
+            </svg>
         </dx-pie-chart>
     </div>
     <div class="bar-container">
@@ -24,14 +30,16 @@
             [rotated]="true"
             [dataSource]="barDataSource"
         >
-            <dxo-argument-axis [placeholderSize]="40">
+            <dxo-argument-axis [placeholderSize]="40" [visible]="false">
                 <dxo-label [visible]="false"></dxo-label>
+                <dxo-tick [visible]="false"></dxo-tick>
             </dxo-argument-axis>
-            <dxi-value-axis [valueMarginsEnabled]="false" [axisDivisionFactor]="80" [placeholderSize]="30">
+            <dxi-value-axis [valueMarginsEnabled]="false" [axisDivisionFactor]="80" [placeholderSize]="30" [visible]="false">
                 <dxo-label [indentFromAxis]="5">
                     <dxo-format type="currency millions"></dxo-format>
                     <dxo-font [opacity]="0.6"></dxo-font>
                 </dxo-label>
+                <dxo-tick [visible]="false"></dxo-tick>
             </dxi-value-axis>
             <dxo-common-series-settings argumentField="Criteria" valueField="Sales" ignoreEmptyPoints="true" type="bar">
                 <dxo-hover-style>

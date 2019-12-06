@@ -16,17 +16,6 @@
         height: 100%;
         width: 29%;
         max-width: 310px;
-        position: relative;
-
-        .title {
-            position: absolute;
-            top: 50%;
-            margin-top: -19px;
-            height: 38px;
-            text-align: center;
-            left: 30%;
-            width: 40%;
-        }
 
         dx-pie-chart {
             height: 100%;

@@ -42,11 +42,13 @@
                 <dxo-font [opacity]="0.6" [size]="14" [weight]="400"></dxo-font>
                 <dxo-margin [left]="16"></dxo-margin>
             </dxo-title>
-            <dxo-argument-axis [placeholderSize]="17">
+            <dxo-argument-axis [placeholderSize]="17" [visible]="false">
                 <dxo-label [visible]="false"></dxo-label>
+                <dxo-tick [visible]="false"></dxo-tick>
             </dxo-argument-axis>
-            <dxi-value-axis [placeholderSize]="30">
+            <dxi-value-axis [placeholderSize]="30" [visible]="false">
                 <dxo-label format="currency millions" [indentFromAxis]="5"></dxo-label>
+                <dxo-tick [visible]="false"></dxo-tick>
             </dxi-value-axis>
             <dxo-common-series-settings argumentField="Criteria" valueField="Sales" ignoreEmptyPoints="true" type="bar">
                 <dxo-hover-style>

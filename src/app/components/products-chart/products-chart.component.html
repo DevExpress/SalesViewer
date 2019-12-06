@@ -4,6 +4,7 @@
         type="doughnut"
         sizeGroup="products-chart"
         [innerRadius]="0.62"
+        centerTemplate="centerTemplate"
     >
         <dxi-series argumentField="Criteria" valueField="Sales">
             <dxo-hover-style>
@@ -29,6 +30,11 @@
             <dxo-shadow [opacity]="0.15" [blur]="0" color="#000" [offsetX]="3" [offsetY]="3"></dxo-shadow>
         </dxo-tooltip>
         <dxo-size [height]="310"></dxo-size>
+        <svg *dxTemplate="let pieChart of 'centerTemplate'">
+            <text text-anchor="middle" style="font-size: 14px" x="100" y="120" [attr.fill]="pieChartCenterColor" opacity="0.6">
+                <tspan x="100">REVENUES</tspan>
+                <tspan x="100" dy="20px">BY {{ category | uppercase }}</tspan>
+            </text>
+        </svg>
     </dx-pie-chart>
 </div>
-<div class="pie-content">REVENUES<br>BY {{ category | uppercase }}</div>

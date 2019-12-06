@@ -12,15 +12,17 @@
             <dxo-size [height]="215"></dxo-size>
             <dxo-common-series-settings argumentField="Criteria" type="bar" hoverMode="onlyPoint" selectionMode="onlyPoint" [minBarSize]="5"></dxo-common-series-settings>
             <dxo-legend [visible]="false"></dxo-legend>
-            <dxo-argument-axis>
+            <dxo-argument-axis [visible]="false">
                 <dxo-label [customizeText]="customizeArgumentLabel"></dxo-label>
+                <dxo-tick [visible]="false"></dxo-tick>
             </dxo-argument-axis>
             <dxo-tooltip [enabled]="true" borderColor="#d9d9d9" color="#fff" [paddingTopBottom]="8" [customizeTooltip]="customizeTooltip" [format]="tooltipFormat">
                 <dxo-font [opacity]="1" [size]="22"></dxo-font>
                 <dxo-shadow [opacity]="0.15" [blur]="0" [offsetX]="3" [offsetY]="3" color="#000"></dxo-shadow>
             </dxo-tooltip>
-            <dxi-value-axis [axisDivisionFactor]="40" [placeholderSize]="45" [max]="maxAxisValue">
+            <dxi-value-axis [axisDivisionFactor]="40" [placeholderSize]="45" [max]="maxAxisValue" [visible]="false">
                 <dxo-label [format]="format" [customizeText]="customizeValueLabel"></dxo-label>
+                <dxo-tick [visible]="false"></dxo-tick>
             </dxi-value-axis>
             <dxi-series [valueField]="pastValueField" [name]="pastName" color="rgba(175, 175, 175, 0.45)">
                 <dxo-hover-style color="rgba(175, 175, 175, 0.45)">
